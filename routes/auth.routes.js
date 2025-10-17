@@ -1,9 +1,13 @@
+// routes -> endpoints
+
 import { Router } from "express";
+import { signUp, singIn, singOut } from "../controllers/auth.controller.js";
 
 const authRouter = Router();
 
-authRouter.post('/sign-up', (req, res) => res.send({ title: 'Sign-up'}));
-authRouter.post('/sign-in', (req, res) => res.send({ title: 'Sign-in'}));
-authRouter.post('/sign-out', (req, res) => res.send({ title: 'Sign-out'}));
+// Path: /api/v1/auth/sign-up (POST)       and so on
+authRouter.post('/sign-up', signUp);
+authRouter.post('/sign-in', singIn);
+authRouter.post('/sign-out', singOut);
 
 export default authRouter;
